@@ -1,0 +1,123 @@
+body {
+    background-color: rgb(221, 217, 217);
+}
+
+h1 {
+    font-size: 80px;
+    margin: 80px;
+    text-align: center;
+    text-shadow: 2px 0px 2px white;
+}
+
+.container {
+    width: 600px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
+    margin: auto;
+    padding: 10px;
+    padding-left: 30px;
+}
+
+/* ul li img {
+    border-radius: 50%;
+} */
+
+.gallery li {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid rgba(88, 88, 88, .8);
+    float: left;
+    margin-right: 20px;
+    position: relative;
+}
+
+.gallery li .twodoor {
+    line-height: 60px;
+}
+
+.gallery li .tiny {
+    line-height: 60px;
+}
+
+.gallery li span {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(200, 200, 200, .5);
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    line-height: 120px;
+    color: #333;
+    font-size: 18px;
+    text-shadow: 1px 1px 1px rgb(150, 150, 150);
+    opacity: 0;
+    transform: scale(0) rotate(0);
+    transition: .3s;
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+.clear {
+    clear: both;
+}
+
+/* overlay */
+
+.overlay {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    transition: 1s;
+    text-align: center;
+    padding: 150px;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.overlay img {
+    max-width: 100%;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, .5);
+}
+
+.overlay:target img {
+    animation: zoomAndFade 1s;
+}
+
+.overlay.close {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+/* animation */
+
+@keyframes zoomAndFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
